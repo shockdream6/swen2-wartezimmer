@@ -1,0 +1,59 @@
+ {#include base.html} 
+ {#title}{patListData.title}{/title} 
+ {#body}
+	<h1>Waiting Room</h1>
+
+	<p>Data is provided by {patListData.server}</p>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Waiting No</th>
+				<th scope="col">Patient ID</th>
+				<th scope="col">First Name</th>
+				<th scope="col">Last Name</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Date of Birth</th>
+				<th scope="col">Status</th>
+				<th scope="col">Waiting Start</th>
+				<th scope="col">Waiting End</th>
+			</tr>
+		</thead>
+		<tbody id="people">
+			{#for patient in patListData.data}
+			<tr>
+				<th scope="row">{patient.waitNo}</th>
+				<td>{patient.patId}</td>
+				<td>{patient.firstName}</td>
+				<td>{patient.lastName}</td>
+				<td>{patient.gender}</td>
+				<td>{patient.birth}</td>
+				<td>{patient.status}</td>
+				<td>{patient.waitingStart}</td>
+				<td>{patient.waitingEnd}</td>
+			</tr>
+			{/for}
+		</tbody>
+	</table>
+	<br>
+	<form action="/html/patient/del" method="post" >
+	  <div class="form-group">
+	    <label for="waitNo"><h4>Delete Waiting No.</h4></label>
+	    <input type="text" class="form-control" name="waitNo" id="waitNo" placeholder="Enter Waiting No.">
+	  </div>
+	  <button type="submit" class="btn btn-default" value="send">Delete</button>
+	</form> 
+	
+	<p>Date: {patListData.now}</p>
+
+{/body} 
+{/include}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,570 @@
+/* Allgemeines */
+
+.link {
+    color: #6c757d;
+}
+
+.link:focus,
+.link:hover {
+    color: #495057;
+    text-decoration: none;
+}
+
+.link.disabled {
+    color: #6c757d
+}
+
+.article {
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+}
+
+.logo {
+    float: left;
+    margin-right: 20px;
+    max-width: 100px;
+    width: 100%;
+    height: 100px;
+}
+
+.notdienst {
+    float: left;
+    width: 35px;
+    margin-right: 5px;
+}
+
+.bold:hover {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic; 
+}
+
+iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* topButton */
+
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#topButton:hover {
+    background-color: #419A1D;
+}
+
+/* Sprechzeiten */
+
+.sprechzeiten_ueberschrift {
+    font-weight: 600;
+    padding: 10px;
+}
+
+.sprechzeiten_zeiten {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+
+#sprechzeiten_tabelle {
+    padding: 5px;
+}
+
+#sprechzeiten_tabelle tr:nth-child(odd) {
+    background-color: #efefef;
+
+}
+
+/* Praxen */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Praxen: Create three equal columns that floats next to each other */
+
+.column {
+    float: left;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+}
+
+/* Praxen: Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Praxen Images */
+
+.praxen-img {
+    width: 75%;
+    max-width: 250px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    opacity: 0.6;
+    transition: 0.3s;
+
+    /* Center */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.praxen-img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Praxen: Floating Box */
+
+.floating-box {
+    float: left;
+    margin-right: 10px;
+    width: 80%;
+    padding: 20px;
+}
+
+/* Praxen: Text linksbündig */
+
+.left {
+    text-align: left;
+}
+
+/* Praxen: Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+/* Praxen Modal Text */
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 80px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    text-align: left;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+
+.modal-content,
+#caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #bbb;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* Kontakt */
+
+.kontakt_ueberschrift {
+    font-style: italic;
+}
+
+input[type=radio] {
+    margin-left: 10px;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical/* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+
+input[type=submit] {
+    background-color: #4CAF50;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+
+.contactform {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Contact form Label */
+
+label {
+    font-weight: 600;
+}
+
+/* Kontakt: Anfahrt */
+
+.responsiveContainer {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Kontakt: Anfahrt */
+
+.responsiveContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Testimonials */
+
+.testimonials {
+    border: 0;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 16px 0
+}
+
+.testimonials::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.testimonials img {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.testimonials span {
+    margin-right: 15px;
+}
+
+.testimonials-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.testimonials-italic {
+    font-size: 15px;
+    font-style: italic;
+}
+
+@media (max-width: 500px) {
+    .testimonials {
+        text-align: center;
+    }
+    .testimonials img {
+        margin: auto;
+        float: none;
+        display: block;
+    }
+}
+
+/* Testimonial Popup container - can be anything you want */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

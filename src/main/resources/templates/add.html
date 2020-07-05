@@ -1,0 +1,81 @@
+ {#include base.html} 
+ {#title}{patListData.title}{/title} 
+ {#body}
+	<h1>Waiting Room</h1>
+
+	<p>Data is provided by {patListData.server}</p>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Waiting No</th>
+				<th scope="col">Patient ID</th>
+				<th scope="col">First Name</th>
+				<th scope="col">Last Name</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Date of Birth</th>
+				<th scope="col">Status</th>
+				<th scope="col">Waiting Start</th>
+				<th scope="col">Waiting End</th>
+			</tr>
+		</thead>
+		<tbody id="people">
+			{#for patient in patListData.data}
+			<tr>
+				<th scope="row">{patient.waitNo}</th>
+				<td>{patient.patId}</td>
+				<td>{patient.firstName}</td>
+				<td>{patient.lastName}</td>
+				<td>{patient.gender}</td>
+				<td>{patient.birth}</td>
+				<td>{patient.status}</td>
+				<td>{patient.waitingStart}</td>
+				<td>{patient.waitingEnd}</td>
+			</tr>
+			{/for}
+		</tbody>
+	</table>
+	<br>
+	<form method="post" action="/html/patient/add">
+		<h4>Add Patient</h4>
+	    <div class="form-group">
+	        <label for="patId">Patient ID</label>
+	        <input type="text" class="form-control" name="patId" id="patId" placeholder="Enter your patient id">
+	    </div>
+	    <div class="form-group">
+	        <label for="firstName">First name</label>
+	        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter first name">
+	    </div>
+	    <div class="form-group">
+	        <label for="lastName">Last name</label>
+	        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter last name">
+	    </div>	  
+		<div class="form-group">
+		   <label for="gender">Select gender</label>
+		   <select class="form-control" name="gender" id="gender">
+		     <option>DIVERS</option>
+		     <option>FEMALE</option>
+		     <option>MALE</option>
+		   </select>
+		</div>
+		<div class="form-group">
+			<label for="birth">Date of Birth:</label>
+			<input type="date" id="birth" name="birth">
+		</div>
+	    <button type="submit" class="btn btn-primary" value="send">Submit</button>
+	    <button type="reset" class="btn btn-primary">Reset</button>
+	</form>
+	
+	<p>Date: {patListData.now}</p>
+
+{/body} 
+{/include}
+
+
+
+
+
+
+
+
+
